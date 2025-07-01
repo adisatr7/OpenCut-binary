@@ -4,13 +4,11 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
 import { HeaderBase } from "./header-base";
-import { useSession } from "@opencut/auth/client";
 import { getStars } from "@/lib/fetchGhStars";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export function Header() {
-  const { data: session } = useSession();
   const [star, setStar] = useState<string>("");
 
   useEffect(() => {
