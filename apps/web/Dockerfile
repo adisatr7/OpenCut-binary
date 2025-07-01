@@ -10,14 +10,10 @@ COPY bun.lock bun.lock
 COPY turbo.json turbo.json
 
 COPY apps/web/package.json apps/web/package.json
-COPY packages/db/package.json packages/db/package.json
-COPY packages/auth/package.json packages/auth/package.json
 
 RUN bun install
 
 COPY apps/web/ apps/web/
-COPY packages/db/ packages/db/
-COPY packages/auth/ packages/auth/
 
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
